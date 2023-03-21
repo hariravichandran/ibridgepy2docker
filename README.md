@@ -45,7 +45,7 @@ To run, also specify the platform to run on:
 docker run -p 10000:8888 --platform linux/amd64 -v "${PWD}":/home/jovyan/work ibridgepy
 ```
 
-The above commands have been tested on a M1 Macbook Air.
+The above commands have been tested on a M1 Macbook Air under macOS Ventura.
 
 More information about `docker buildx` can be found here:
 https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
