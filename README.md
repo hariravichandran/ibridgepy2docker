@@ -1,6 +1,6 @@
 # IBridgePy on Docker 
 
-Dockerize IBridgePy Platform: (https://ibridgepy.com) to Automate your Trading.
+Dockerize IBridgePy Platform: (https://ibridgepy.com) to do Algorithmic Trading in Python with Interactive Brokers.
 
 This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Tested Deployment on MacOS Monterey on 2016 13" Macbook Pro. (Unfortunately, it doesn't look like IBridgePy supports Apple Silicon Macs at the Current Time). It *should* work on Linux, but has not been tested.
 
