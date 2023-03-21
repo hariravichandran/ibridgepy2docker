@@ -2,7 +2,7 @@
 
 Dockerize IBridgePy Platform: (https://ibridgepy.com) to do Algorithmic Trading in Python with Interactive Brokers.
 
-This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Tested Deployment on MacOS Monterey on 2016 13" Macbook Pro. (Unfortunately, it doesn't look like IBridgePy supports Apple Silicon Macs at the Current Time). It *should* work on Linux, but has not been tested.
+This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Tested Deployment on MacOS Monterey on 2016 13" Macbook Pro. It *should* work on Linux, but has not been tested.
 
 The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-notebook is used as a template. The `b86753318aa1` tag is used since that tag uses `Python 3.7`, the version we need for IBridgePy to work.
 
@@ -33,6 +33,23 @@ In the folder, `/IBridgePy_Ubuntu_Python37_64`, you can run the `RUN_ME.py` scri
 `python RUN_ME.py`
 
 That will get you started at least!
+
+# Running on Apple Silicon
+The M1 Chip uses the ARM architecture as opposed to the x86 architecture. Hence, you need to use the `docker buildx build` command:
+
+```
+docker buildx build --platform=linux/amd64 -t ibridgepy .
+```
+To run, also specify the platform to run on:
+```
+docker run -p 10000:8888 --platform linux/amd64 -v "${PWD}":/home/jovyan/work ibridgepy
+```
+
+The above commands have been tested on a M1 Macbook Air.
+
+More information about `docker buildx` can be found here:
+https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
+https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408
 
 ## TWS
 You will have to install TWS on Mac OS X. (https://www.interactivebrokers.com/en/software/macDownload.php)
