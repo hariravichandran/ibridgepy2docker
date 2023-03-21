@@ -1,24 +1,35 @@
-# IBridgePy Dockerized
+# IBridgePy on Docker 
 
-This is a personal effort to Dockerize IBridgePy Platform: https://ibridgepy.com to Automate your Trading.
+Dockerize IBridgePy Platform: (https://ibridgepy.com) to Automate your Trading.
 
-Please register and download the zip file for 3.7 Ubuntu from the following portal:
-https://ibridgepy-portal.herokuapp.com
+This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Tested Deployment on MacOS Monterey on 2016 13" Macbook Pro.
+
+The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-notebook is used as a template. The `b86753318aa1` tag is used since that tag uses `Python 3.7`, the version we need for IBridgePy to work.
 
 ## Installation
 
- Pull this repo and add the IBridgePy zip file to the same Folder.
+ Pull this repo and change to the directory in the terminal.
+ `cd <repo-directory>`
 
- Build your container Image:
- `docker build -t <your_image_name> .`
+ Build container image (Only need to build for the first time/when altering container image):
+ `docker build -t ibridgepy .`
 
- Launch your container from the built image:
- `docker run -itd -p 8888:8888 <your_imange_name>`
+ Launch container from built image:
+ `docker run -p 10000:8888 -v "${PWD}":/home/jovyan/work ibridgepy`
+-- This mounts your current directory with IBridgePy files to the home directory of the Jupyter notebook. Hence you can transfer files from your local to Jupyter and edit them there.
 
-## Usage
+Go to the Jupyter URL at Localhost, Port 10000:
+http://127.0.0.1:10000/lab?token=<TOKEN>
+-- Change the token to the one that comes up in the terminal after Jupyter runs.
 
- Access the Jupyter Portal 'http://localhost:8888', and edit the IBridgePy Config Files to connect to your IB TWS API.
+In the folder, `/IBridgePy_Ubuntu_Python37_64`, you can run the `RUN_ME.py` script:
+`python RUN_ME.py`
 
- Make sure to add the Docker Host IP to the whitelisted IPs of your TWS API.
+That will get you started at least!
 
- Load the .ipynb files and Enjoy Testing IBridgePy!
+## TWS
+You will have to install TWS on Mac OS X. (https://www.interactivebrokers.com/en/software/macDownload.php)
+
+The ports and other settings need to be setup correctly. See this video: https://www.youtube.com/watch?v=M96ZPXQnngA&t=304s
+
+Hopefully this is helpful. Let me know if it works well and/or if there are any issues.
