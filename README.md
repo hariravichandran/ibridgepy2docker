@@ -48,6 +48,7 @@ docker run -p 10000:8888 --platform linux/amd64 -v "${PWD}":/home/jovyan/work ib
 The above commands have been tested on a M1 Macbook Air under macOS Ventura.
 
 More information about `docker buildx` can be found here:
+
 https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
 https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408
 
