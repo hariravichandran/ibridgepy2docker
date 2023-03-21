@@ -19,13 +19,17 @@ The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-noteboo
  Launch container from built image:
  
  ```docker run -p 10000:8888 -v "${PWD}":/home/jovyan/work ibridgepy```
+ 
 -- This mounts your current directory with IBridgePy files to the home directory of the Jupyter notebook. Hence you can transfer files from your local to Jupyter and edit them there.
 
 Go to the Jupyter URL at Localhost, Port 10000:
+
 ```http://127.0.0.1:10000/lab?token=<TOKEN>```
+
 -- Change the token to the one that comes up in the terminal after Jupyter runs.
 
 In the folder, `/IBridgePy_Ubuntu_Python37_64`, you can run the `RUN_ME.py` script:
+
 `python RUN_ME.py`
 
 That will get you started at least!
