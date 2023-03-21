@@ -9,12 +9,15 @@ The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-noteboo
 ## Installation
 
  Pull this repo and change to the directory in the terminal.
+ 
  ```cd <repo-directory>```
 
  Build container image (Only need to build for the first time/when altering container image):
+ 
  ```docker build -t ibridgepy .```
 
  Launch container from built image:
+ 
  ```docker run -p 10000:8888 -v "${PWD}":/home/jovyan/work ibridgepy```
 -- This mounts your current directory with IBridgePy files to the home directory of the Jupyter notebook. Hence you can transfer files from your local to Jupyter and edit them there.
 
