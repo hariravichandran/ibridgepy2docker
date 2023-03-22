@@ -2,7 +2,7 @@
 
 Dockerize IBridgePy Platform: (https://ibridgepy.com) to do Algorithmic Trading in Python with Interactive Brokers.
 
-This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Tested Deployment on MacOS Monterey on 2016 13" Macbook Pro. It *should* work on Linux, but has not been tested.
+This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubuntu_Python37_64). Deployment has been tested on Windows and macOS.
 
 The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-notebook is used as a template. The `b86753318aa1` tag is used since that tag uses `Python 3.7`, the version we need for IBridgePy to work.
 
@@ -33,8 +33,6 @@ To run, also specify the platform to run on:
 ```
 docker run -p 10000:8888 --platform linux/amd64 -v "${PWD}":/home/jovyan/work ibridgepy
 ```
-
-The above commands have been tested on a M1 Macbook Air under macOS Ventura.
 
 More information about `docker buildx` can be found here:
 
