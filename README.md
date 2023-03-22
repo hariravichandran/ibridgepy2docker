@@ -43,7 +43,7 @@ https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
 https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408
 
 ## Running on Windows
-Use the following docker commands to run on the windows command line:
+Use the following docker commands to build and run the container on the windows command line:
 
  ```docker build -t ibridgepy .```
 
