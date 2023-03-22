@@ -23,7 +23,7 @@ The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-noteboo
  
 -- This mounts your current directory with IBridgePy files to the home directory of the Jupyter notebook. Hence you can transfer files from your local to Jupyter and edit them there.
 
-## Running on Apple Silicon
+## Running on macOS Apple Silicon
 The M1 Chip uses the ARM architecture as opposed to the x86 architecture. Hence, you need to use the `docker buildx build` command:
 
 ```
