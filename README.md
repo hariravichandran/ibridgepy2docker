@@ -6,7 +6,7 @@ This repo uses the 3.7 Ubuntu files as needed for IBridgePy (e.g., IBridgePy_Ubu
 
 The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-notebook is used as a template. The `b86753318aa1` tag is used since that tag uses `Python 3.7`, the version we need for IBridgePy to work.
 
-## Installation
+# Installation
 
  Pull this repo and change to the directory in the terminal.
  
@@ -23,19 +23,7 @@ The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-noteboo
  
 -- This mounts your current directory with IBridgePy files to the home directory of the Jupyter notebook. Hence you can transfer files from your local to Jupyter and edit them there.
 
-Go to the Jupyter URL at Localhost, Port 10000:
-
-```http://127.0.0.1:10000/lab?token=<TOKEN>```
-
--- Change the token to the one that comes up in the terminal after Jupyter runs.
-
-In the folder, `/IBridgePy_Ubuntu_Python37_64`, you can run the `RUN_ME.py` script:
-
-`python RUN_ME.py`
-
-That will get you started at least!
-
-# Running on Apple Silicon
+## Running on Apple Silicon
 The M1 Chip uses the ARM architecture as opposed to the x86 architecture. Hence, you need to use the `docker buildx build` command:
 
 ```
@@ -54,7 +42,7 @@ https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
 
 https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408
 
-# Running on Windows
+## Running on Windows
 Use the following docker commands to run on the windows command line:
 
  ```docker build -t ibridgepy .```
@@ -63,8 +51,19 @@ Use the following docker commands to run on the windows command line:
 docker run -p 10000:8888 -v %cd%:/home/jovyan/work ibridgepy
 ```
 
+# After Building and Running the Docker Container:
+Go to the Jupyter URL at Localhost, Port 10000:
 
-## TWS
+```http://127.0.0.1:10000/lab?token=<TOKEN>```
+
+-- Change the token to the one that comes up in the terminal after Jupyter runs.
+
+In the folder, `/IBridgePy_Ubuntu_Python37_64`, you can run the `RUN_ME.py` script:
+
+`python RUN_ME.py`
+
+
+# TWS
 You will have to install TWS on Mac OS X. (https://www.interactivebrokers.com/en/software/macDownload.php)
 
 The ports and other settings need to be setup correctly. See this video: https://www.youtube.com/watch?v=M96ZPXQnngA&t=304s
