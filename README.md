@@ -12,6 +12,7 @@ The Jupyter Image from https://github.com/jupyter/docker-stacks --> base-noteboo
  
  ```cd <repo-directory>```
 
+## Running on macOS Intel / Linux
  Build container image (Only need to build for the first time/when altering container image):
  
  ```docker build -t ibridgepy .```
@@ -52,6 +53,16 @@ More information about `docker buildx` can be found here:
 https://everythingdevops.dev/building-x86-images-on-an-apple-m1-chip/
 
 https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408
+
+# Running on Windows
+Use the following docker commands to run on the windows command line:
+
+ ```docker build -t ibridgepy .```
+
+```
+docker run -p 10000:8888 -v %cd%:/home/jovyan/work ibridgepy
+```
+
 
 ## TWS
 You will have to install TWS on Mac OS X. (https://www.interactivebrokers.com/en/software/macDownload.php)
